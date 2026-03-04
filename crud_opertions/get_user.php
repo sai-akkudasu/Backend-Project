@@ -1,6 +1,5 @@
 <?php
-require "dbconnect.php";
-
+require "dbconnect.php"; 
 header("Content-Type: application/json");
 $id = $_GET['id'] ?? null;
 
@@ -11,7 +10,6 @@ if (!$id) {
 }
 
 $id = filter_var($id, FILTER_VALIDATE_INT);
-
 if (!$id) {
     http_response_code(400);
     echo json_encode(["error" => "Invalid id"]);
